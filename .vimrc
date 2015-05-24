@@ -367,7 +367,8 @@ endfunction
 
 " color scheme setup
 syntax enable
-colorscheme monokai
+" colorscheme monokai
+colorscheme cobalt
 
 " plugin
 execute pathogen#infect()
