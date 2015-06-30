@@ -16,6 +16,7 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " [ end vundle]
 call vundle#end()
@@ -119,12 +120,13 @@ let g:badwolf_css_props_highlight = 1
 let g:syntastic_check_on_open = 1
 
 " [ nerd tree]
-map <C-n> :NERDTreeToggle<CR> " toggle nerd tree using CTRL-N
+map <C-n> :NERDTreeTabsToggle<CR> " toggle nerd tree using CTRL-N
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd vimenter * NERDTree " start up nerd tree when vim opens
+let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 
 " [ neocomplete ]
 
