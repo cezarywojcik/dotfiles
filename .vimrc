@@ -110,3 +110,6 @@ colorscheme badwolf
 let g:badwolf_darkgutter = 1
 let g:badwolf_css_props_highlight = 1
 
+" [ syntastic ]
+let g:syntastic_check_on_open = 1
+

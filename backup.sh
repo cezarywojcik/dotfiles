@@ -1,5 +1,4 @@
 cp ~/.vimrc ./.vimrc
-cp -r ~/.vim ./.vim
 
 cp ~/.zshrc ./.zshrc
 cp -r ~/.oh-my-zsh/ ./.oh-my-zsh/

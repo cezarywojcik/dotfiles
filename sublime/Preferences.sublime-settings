@@ -15,7 +15,7 @@
 		119
 	],
 	"tab_size": 2,
-  "translate_tabs_to_spaces": false,
+  "translate_tabs_to_spaces": true,
 	"theme": "Cobalt2.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"wrap_width": 0
