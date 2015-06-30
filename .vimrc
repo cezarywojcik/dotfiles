@@ -15,6 +15,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
 Plugin 'keith/swift.vim'
+Plugin 'Shougo/neocomplete.vim'
 
 " [ end vundle]
 call vundle#end()
@@ -82,6 +83,10 @@ set smartcase " smart case for searching
 inoremap <C-c> <ESC> " just in case
 nmap fq :q!<CR> " fq to force quit
 nmap <leader>w :w!<CR>
+map <C-h> <C-w>h " window switching
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " [ settings ]
 set ffs=unix,dos,mac
@@ -112,4 +117,30 @@ let g:badwolf_css_props_highlight = 1
 
 " [ syntastic ]
 let g:syntastic_check_on_open = 1
+
+" [ nerd tree]
+map <C-n> :NERDTreeToggle<CR> " toggle nerd tree using CTRL-N
+autocmd StdinReadPre * let s:std_in=1
+autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd vimenter * NERDTree " start up nerd tree when vim opens
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" [ neocomplete ]
+
+let g:acp_enableAtStartup = 0
+" use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" use smartcase
+let g:neocomplete#enable_smart_case = 1
+" set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
