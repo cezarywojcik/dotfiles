@@ -18,6 +18,7 @@ Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'yggdroot/indentline'
+Plugin 'digitaltoad/vim-jade'
 
 " [ end vundle]
 call vundle#end()
