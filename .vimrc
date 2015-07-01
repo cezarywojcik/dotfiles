@@ -17,6 +17,7 @@ Plugin 'sjl/badwolf'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'yggdroot/indentline'
 
 " [ end vundle]
 call vundle#end()
@@ -111,7 +112,12 @@ set gdefault " use g flag in search/replace by default
 " [ airline ]
 let g:airline_powerline_fonts = 1
 
+" [ indent guides ]
+let g:indentLine_color_term=239
+autocmd VimEnter * :IndentLinesToggle
+
 " [ badwolf ]
+set background=dark
 colorscheme badwolf
 let g:badwolf_darkgutter = 1
 let g:badwolf_css_props_highlight = 1
@@ -127,9 +133,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
 " [ neocomplete ]
-
 let g:acp_enableAtStartup = 0
 " use neocomplete.
 let g:neocomplete#enable_at_startup = 1
