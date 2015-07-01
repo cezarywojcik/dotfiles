@@ -136,7 +136,7 @@ map <C-n> :NERDTreeTabsToggle<CR> " toggle nerd tree using CTRL-N
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " [ neocomplete ]
