@@ -1,3 +1,9 @@
+""
+" File: .vimrc
+" Auth: Cezary Wojcik
+" Desc: My .vimrc file.
+""
+
 " [ set up vundle ]
 set nocompatible
 filetype off
@@ -118,7 +124,7 @@ let g:indentLine_color_term=239
 let g:indentLine_char='|'
 
 " [ language specific ]
-autocmd vimenter *.py,*.js  setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd vimenter *.py,*.js,*.html,*.jade  setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd vimenter *.swift,*.m,*.mm,*.h,*.c,*.cpp setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd vimenter * :IndentLinesToggle " reset to apply new tab width
 autocmd vimenter * :IndentLinesToggle
