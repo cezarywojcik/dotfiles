@@ -114,7 +114,13 @@ let g:airline_powerline_fonts = 1
 
 " [ indent guides ]
 let g:indentLine_color_term=239
-autocmd VimEnter * :IndentLinesToggle
+let g:indentLine_char='|'
+
+" [ language specific ]
+autocmd vimenter *.py,*.js  setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd vimenter *.swift,*.m,*.mm,*.h,*.c,*.cpp setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd vimenter * :IndentLinesToggle " reset to apply new tab width
+autocmd vimenter * :IndentLinesToggle
 
 " [ badwolf ]
 set background=dark
@@ -129,7 +135,7 @@ let g:syntastic_check_on_open = 1
 map <C-n> :NERDTreeTabsToggle<CR> " toggle nerd tree using CTRL-N
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
+" let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
 autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
