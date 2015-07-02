@@ -3,6 +3,8 @@ cp ./.vimrc ~/.vimrc
 vim +PluginInstall +qall
 cp -r ./.vim ~/.vim
 
+cp -r ./ftplugin ~/.vim/ftplugin
+
 cp ./.zshrc ~/.zshrc
 cp -r ./.oh-my-zsh/ ~/.oh-my-zsh/
 

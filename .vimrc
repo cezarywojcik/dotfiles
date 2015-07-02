@@ -22,7 +22,6 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'yggdroot/indentline'
 Plugin 'digitaltoad/vim-jade'
 
@@ -53,9 +52,9 @@ set lazyredraw
 set magic " regular expressions
 set showmatch " matching brackets
 set mat=2
+filetype plugin indent on
 
 " [ auto commands ]
-
 " auto source vimrc on save
 augroup reload_vimrc " {
     autocmd!
@@ -64,7 +63,6 @@ augroup END " }
 
 " restore cursor position
 if has("autocmd")
-	filetype plugin indent on
 	autocmd BufReadPost *
 		\ if line("'\"") > 1 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
@@ -102,8 +100,6 @@ set ffs=unix,dos,mac
 set noswapfile
 set expandtab " spaces instead of tabs
 set wrap
-filetype plugin on " enable filtype plugins
-filetype indent on
 set autoread " auto read when file is changed from outside
 let mapleader=","
 let g:mapleader=","
@@ -123,12 +119,6 @@ let g:airline_powerline_fonts = 1
 let g:indentLine_color_term=239
 let g:indentLine_char='|'
 
-" [ language specific ]
-autocmd vimenter *.py,*.js,*.html,*.jade  setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd vimenter *.swift,*.m,*.mm,*.h,*.c,*.cpp setlocal expandtab shiftwidth=4 softtabstop=4
-autocmd vimenter * :IndentLinesToggle " reset to apply new tab width
-autocmd vimenter * :IndentLinesToggle
-
 " [ badwolf ]
 set background=dark
 colorscheme badwolf
@@ -139,11 +129,9 @@ let g:badwolf_css_props_highlight = 1
 let g:syntastic_check_on_open = 1
 
 " [ nerd tree]
-map <C-n> :NERDTreeTabsToggle<CR> " toggle nerd tree using CTRL-N
+map <C-n> :NERDTreeToggle<CR> " toggle nerd tree using CTRL-N
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" let g:nerdtree_tabs_open_on_console_startup = 1 " open on startup
-" autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " [ neocomplete ]
