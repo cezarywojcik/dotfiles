@@ -54,4 +54,5 @@ alias tmux="TERM=xterm-256color tmux"
 alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 alias tn="tmux new -s"
+alias ta="tmux attach-session -t"
 
