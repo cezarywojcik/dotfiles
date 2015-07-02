@@ -12,18 +12,23 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " [ plugins ]
-" run 'vim +PluginInstall +qall' to install
+" features
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-Plugin 'sjl/badwolf'
-Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'yggdroot/indentline'
+
+" colorscheme
+Plugin 'sjl/badwolf'
+
+" additional language support
+Plugin 'keith/swift.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'cakebaker/scss-syntax.vim'
 
 " [ end vundle]
 call vundle#end()
