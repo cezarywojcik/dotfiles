@@ -1,6 +1,8 @@
 cp ~/.vimrc ./.vimrc
 cp -r ~/.vim/ftplugin/ ./ftplugin/
 
+cp ~/.tmux.conf ./.tmux.conf
+
 cp ~/.zshrc ./.zshrc
 cp -r ~/.oh-my-zsh/ ./.oh-my-zsh/
 

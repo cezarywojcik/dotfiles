@@ -48,5 +48,10 @@ alias fucking="sudo"
 alias stfu="osascript -e 'set volume output muted true'"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias fixxcode="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
+
+# tmux commands
 alias tmux="TERM=xterm-256color tmux"
+alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
+alias tn="tmux new -s"
 
