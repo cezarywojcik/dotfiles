@@ -149,10 +149,38 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Enable omni completion.
+" enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" [ comment headers ]
+" default comment header
+function! s:insert_gates()
+  execute "normal! i/**"
+  execute "normal! oFile: " . expand("%:t") 
+  execute "normal! oDate: " . strftime("%b %d, %Y %X")
+  execute "normal! :r !date"
+  execute "normal! oDesc:  "
+  execute "normal! oAuth: Cezary Wojcik"
+  execute "normal! o/"
+  execute "normal! $"
+  normal! kk
+endfunction
+autocmd BufNewFile *.js,*.c,*.h,*.swift call <SID>insert_gates()
+
+function! s:insert_gates2()
+  execute "normal! i##"
+  execute "normal! o# File: " . expand("%:t") 
+  execute "normal! o# Date: " . strftime("%b %d, %Y %X")
+  execute "normal! :r !date"
+  execute "normal! o# Desc:  "
+  execute "normal! o# Auth: Cezary Wojcik"
+  execute "normal! o##"
+  execute "normal! $"
+  normal! kk
+endfunction
+autocmd BufNewFile *.py,*.sh call <SID>insert_gates2()
 
