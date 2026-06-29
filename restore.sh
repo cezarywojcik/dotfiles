@@ -9,5 +9,8 @@ cp ./.tmux.conf ~/.tmux.conf
 cp ./.zshrc ~/.zshrc
 cp -r ./.oh-my-zsh/ ~/.oh-my-zsh/
 
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+cp ./xcode/Cezary.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
 # need a powerline font from https://github.com/powerline/fonts
 
